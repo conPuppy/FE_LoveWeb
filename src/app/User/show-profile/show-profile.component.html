@@ -1,0 +1,458 @@
+<div id="wrapper" xmlns:text-align="http://www.w3.org/1999/xhtml">
+
+
+    <!-- header -->
+    <div id="main_header" class="header-transparent" uk-sticky="top:10; cls-inactive :header-transparent">
+        <header>
+
+            <!-- Logo-->
+            <i class="header-traiger uil-bars" uk-toggle="target: #wrapper ; cls: mobile-active" (click)="goToTheHome()"></i>
+
+
+            <div class="h5 uk-hidden@m mr-3 mb-0"> Bootstro</div>
+            <!-- form search-->
+            <div class="head_search uk-visible@m">
+                <form>
+                    <div class="head_search_cont">
+                        <input value="" type="text" class="form-control"
+                               placeholder="Search for Customers, Products, Files and more.." autocomplete="off">
+                        <i class="s_icon uil-search-alt"></i>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- user icons -->
+            <div class="head_user">
+
+
+                <!-- browse apps  -->
+                <a href="#" class="opts_icon uk-visible@s"> <i class="uil-shop"></i></a>
+                <a href="#" class="opts_icon uk-visible@s"> <i class="uil-shopping-basket"></i> <span>1</span></a>
+                <!-- cart apps dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications large">
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th scope="col"
+                                            style="vertical-align: text-top; text-align: left; font: 0.875rem / 1.5 Consolas, monaco, monospace;">
+                                            Provider
+                                        </th>
+                                        <th scope="col"
+                                            style="vertical-align: text-top; text-align: left; font: 0.875rem / 1.5 Consolas, monaco, monospace;">
+                                            Order Time (giờ)
+                                        </th>
+                                        <th scope="col"
+                                            style="vertical-align: text-top; text-align: left; font: 0.875rem / 1.5 Consolas, monaco, monospace;">
+                                            Total ($/giờ)
+                                        </th>
+                                        <th scope="col"
+                                            style="vertical-align: text-top; text-align: left; font: 0.875rem / 1.5 Consolas, monaco, monospace;"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr *ngFor="let o of orderLovers">
+                                        <td><span class="notification-avatar" style="width: 26px; height: 26px">
+                                            <img src="{{o?.provider?.account?.avatar}}" alt="">
+                                        </span></td>
+                                        <td style="text-align: center; font: 0.875rem / 1.5 Consolas, monaco, monospace;color: #666;">{{o?.provider?.account?.fullName}}</td>
+                                        <td style="text-align: center;font: 0.875rem / 1.5 Consolas, monaco, monospace;color: #666;">{{o.orderTime}}</td>
+                                        <td style="text-align: center;font: 0.875rem / 1.5 Consolas, monaco, monospace;color: #666;">{{o.total}} </td>
+                                        <!--                                        <td><button type="submit" class="btn btn-danger" data-bs-dismiss="modal" (click)="createOrderLover()">Order</button></td>-->
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="dropdown-notifications-footer">
+                        <a href="#"> sell all <i class="icon-line-awesome-long-arrow-right"></i> </a>
+                    </div>
+                </div>
+
+
+                <!-- Message  notificiation dropdown -->
+                <a href="#" class="opts_icon"> <i class="uil-envelope-alt"></i> <span>4</span> </a>
+
+                <!-- Message  notificiation dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications large">
+
+                    <!-- notivication header -->
+                    <div class="dropdown-notifications-headline">
+                        <h4>Messages</h4>
+                        <a href="#">
+                            <i class="icon-feather-settings" uk-tooltip="title: Message settings ; pos: left"></i>
+                        </a>
+                    </div>
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read">
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-2.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Alia Joseph</strong>
+                                        <p>Okay thanks.. I will be waiting for your answer</p>
+                                        <span class="time-ago"> 2 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-3.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Stella Johnson</strong>
+                                        <p> Alia Joseph just joined Messenger! say Hi. </p>
+                                        <span class="time-ago"> 7 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-1.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Alex Dolgove</strong>
+                                        <p> Alex will explain you how to keep the structure ....</p>
+                                        <span class="time-ago"> 19 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-4.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Adrian Mohani</strong>
+                                        <p> Okay thanks.. I will be waiting for your answer </p>
+                                        <span class="time-ago"> Yesterday </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="dropdown-notifications-footer">
+                        <a href="#"> sell all <i class="icon-line-awesome-long-arrow-right"></i> </a>
+                    </div>
+
+
+                </div>
+
+
+                <!-- notificiation icon  -->
+                <a href="#" class="opts_icon"> <i class="uil-bell"></i> <span>3</span> </a>
+
+                <!-- notificiation dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications">
+
+                    <!-- notivication header -->
+                    <div class="dropdown-notifications-headline">
+                        <h4>Notifications </h4>
+                        <a href="#">
+                            <i class="icon-feather-settings"
+                               uk-tooltip="title: Notifications settings ; pos: left"></i>
+                        </a>
+                    </div>
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read">
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-danger">
+                                            <i class="uil-shopping-basket text-danger"></i></span>
+                                    <span class="notification-text"> New Order Recieved
+                                            <br> <span class="time-ago"> 9 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-success">
+                                            <i class="uil-user-plus text-success"></i></span>
+                                    <span class="notification-text"> New customer registered
+                                            <br> <span class="time-ago"> 19 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-danger">
+                                            <i class="icon-feather-database text-danger"></i></span>
+                                    <span class="notification-text">  Server Limit Reached!
+                                            <br> <span class="time-ago"> 12 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-primary">
+                                            <i class="uil-apps text-primary"></i></span>
+                                    <span class="notification-text">
+                                            <strong>10+</strong>  Apps ready for update
+                                            <br> <span class="time-ago"> Yesterday </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-success">
+                                            <i class="uil-user-plus text-success"></i></span>
+                                    <span class="notification-text"> New customer registered
+                                            <br> <span class="time-ago"> Yesterday </span>
+                                        </span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+                <!-- profile -image -->
+                <a class="opts_account"> <img src="{{account?.avatar}}" alt=""></a>
+
+                <!-- profile dropdown-->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications small">
+
+                    <!-- User Name / Avatar -->
+                    <a href="#">
+
+                        <div class="dropdown-user-details">
+                            <div class="dropdown-user-avatar">
+                                <a class="opts_account">
+                                    <img src="{{account?.avatar}}" alt=""></a>
+                            </div>
+                            <div class="dropdown-user-name">
+                                {{account?.username}} <span> {{account?.wallet}} <i
+                                    class="icon-feather-dollar-sign"></i> </span>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <!-- User menu -->
+
+                    <ul class="dropdown-user-menu">
+                        <li><a class="btn-warning" *ngIf="statusProvider==3"> <i class="uil-user"></i> Wait admin
+                            accept!</a></li>
+                        <li><a class="btn-success" *ngIf="statusProvider==1"> <i class="uil-user"></i> Ready</a></li>
+                        <li><a class="btn-danger" *ngIf="statusProvider==2"> <i class="uil-user"></i> Busy</a></li>
+                        <li><a class="btn-success" (click)="createProvider()"
+                               *ngIf="statusProvider!=1&&statusProvider!=2&&statusProvider!=3"> <i class="uil-bolt"></i>
+                            Become Provider</a></li>
+                        <li><a (click)="goToProfile()"> <i class="uil-user"></i> My Profile </a></li>
+                        <li><a (click)="goToMyOrder()"> <i class="uil-invoice"></i> My Order </a></li>
+                        <li><a (click)="goToMyBill()"> <i class="uil-invoice"></i> My Bill </a></li>
+                        <li><a (click)="goToEditProfile()"> <i class="uil-edit"></i> Edit Profile </a></li>
+                        <li><a (click)="goToProviderSetting()"> <i class="uil-cog"></i> Provider Settings</a></li>
+                        <li class="menu-divider"></li>
+                        <li><a (click)="logout()"> <i class="icon-feather-log-out"></i> Sing Out</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+    </div>
+
+
+    <div class="box-gradient-home"></div>
+
+    <!-- content -->
+    <div class="page-content">
+        <div class="page-content-inner">
+            <br>
+            <br>
+            <h2 class="text-white">My Profile </h2>
+
+            <br>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Account</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="users-view-image ml-lg-2">
+                                </div>
+
+
+                                <div class="col-12 col-sm-9 col-md-6 col-lg-5">
+                                    <table class="table table-borderless table-sm">
+                                        <tbody>
+                                        <div>
+                                            <img src="{{account?.avatar}}"
+                                                 style="width: 250px;height: 250px" alt="avatar">
+                                        </div>
+                                        <button (click)="goToEditProfile()"
+                                                class="btn btn-primary mr-1 waves-effect waves-light"><i
+                                                class="feather icon-edit-1"></i> Edit
+                                        </button>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <div class="col-12 col-md-12 col-lg-5">
+                                    <table class="table table-borderless table-sm ml-0 ml-sm-0 ml-lg-0">
+                                        <tbody>
+                                        <tr>
+                                            <td class="font-weight-bold">Full Name</td>
+                                            <td>{{account.fullName}} </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-weight-bold">Username</td>
+                                            <td>{{account.username}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-weight-bold">Email</td>
+                                            <td>{{account.email}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-weight-bold">Status</td>
+                                            <td>active</td>
+
+                                        </tr>
+<!--                                        <tr>-->
+<!--                                            <td class="font-weight-bold">Role</td>-->
+<!--                                            <td>{{roleString}}</td>-->
+<!--                                        </tr>Role-->
+                                        <tr>
+                                            <td class="font-weight-bold">Gender</td>
+                                            <td>{{account.gender}} </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 col-12 ">
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <h4>Information</h4>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-borderless table-sm">
+                                <tbody>
+                                <tr>
+                                    <td class="font-weight-bold text-dark">Birth Date</td>
+                                    <td>{{account.birthday}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-dark">Mobile</td>
+                                    <td>+{{account.phoneNumber}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-dark">Height</td>
+                                    <td>{{account.height}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-dark">Weight</td>
+                                    <td>{{account.weight}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-dark">City</td>
+                                    <td>{{account.city}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-dark">Country</td>
+                                    <td>{{account.country}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-dark">Hobby</td>
+                                    <td>{{account.hobby}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold text-dark">Description</td>
+                                    <td>{{account.description}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- footer
+           ================================================== -->
+        <div class="footer">
+            <div class="uk-grid-collapse" uk-grid>
+                <div class="uk-width-expand@s uk-first-column">
+                    <p>© 2020 <strong>Bootstro</strong>. All Rights Reserved. </p>
+                </div>
+                <div class="uk-width-auto@s">
+                    <nav class="footer-nav-icon">
+                        <ul>
+                            <li><a href="#"><i class="icon-brand-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-brand-dribbble"></i></a></li>
+                            <li><a href="#"><i class="icon-brand-youtube"></i></a></li>
+                            <li><a href="#"><i class="icon-brand-twitter"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- javaScripts
+================================================== -->
+<script src="assets/js/uikit.js"></script>
+<script src="assets/js/simplebar.js"></script>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/bootstrap-select.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/main.js"></script>

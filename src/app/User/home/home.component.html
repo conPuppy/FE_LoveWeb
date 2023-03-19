@@ -1,0 +1,161 @@
+
+
+
+<div id="wrapper">
+
+
+  <!-- header -->
+  <div id="main_header" class="header-transparent" uk-sticky="top:10; cls-inactive :header-transparent">
+    <header>
+
+      <!-- Logo-->
+      <i class="header-traiger uil-bars" uk-toggle="target: #wrapper ; cls: mobile-active"></i>
+<!--      <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/336647511_226684473247026_780558364310787225_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=hJ0KFIjmcT0AX_PtBqA&_nc_ht=scontent.fhan17-1.fna&oh=00_AfDoe8u9L0FyXcDIidHppBFLLx3VvpClfv4CPOtjnpntVw&oe=641A1048"-->
+<!--      style="height: 50px; width: 50px">-->
+
+      <div class="h5 uk-hidden@m mr-3 mb-0"> Bootstro </div>
+      <!-- form search-->
+      <div class="head_search uk-visible@m">
+        <form>
+          <div class="head_search_cont">
+            <input value="" type="text" class="form-control"
+                   placeholder="Search for Customers, Products, Files and more.." autocomplete="off">
+            <i class="s_icon uil-search-alt"></i>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- user icons -->
+      <div class="head_user">
+
+        <div uk-dropdown="pos: top;mode:click ; animation: uk-animation-scale-up" class="icon-browse">
+
+<!--          <a href="#" class="icon-menu-item"> <i class="uil-shop"></i> Dashboard </a>-->
+<!--          <a href="#" class="icon-menu-item"> <i class="uil-envelope-alt"></i> Messages </a>-->
+<!--          <a href="#" class="icon-menu-item"> <i class="uil-bookmark"></i> Bookmark </a>-->
+<!--          <a href="#" class="icon-menu-item"> <i class="uil-shopping-basket"></i> Cart </a>-->
+<!--          <a href="#" class="icon-menu-item"> <i class="uil-shield-check"></i> Privacy </a>-->
+<!--          <a href="#" class="icon-menu-item"> <i class="uil-bolt-alt"></i> Upgrade </a>-->
+<!--          <a href="#" class="more-app"> More Features</a>-->
+        </div>
+
+        <a (click)="login()" class="opts_account"><span>Login</span> </a>
+        <a (click)="register()" class="opts_account"><span>Register</span> </a>
+      </div>
+
+    </header>
+
+  </div>
+
+
+  <div class="box-gradient-home"></div>
+
+  <div class="page-content">
+    <div class="page-content-inner">
+      <br>
+      <br>
+      <nav id="breadcrumbs" class="text-white">
+        <ul>
+          <li style="font-weight: 700; font-size: 20px;"> Top View Providers</li>
+        </ul>
+      </nav>
+
+
+      <div class="row">
+
+        <div class="col-md-3 col-sm-6" *ngFor="let pr of providersView">
+          <div class="card uk-inline-clip text-center animate-this">
+            <img src="{{pr?.account?.avatar}}" alt="" style="height: 320px; width: 300px">
+            <div class="p-3">
+              <h4 class="mb-2" data-bs-toggle="modal" data-bs-target="#myModal">{{pr.account.fullName}}</h4>
+              <div >
+                <p><i class="uil-eye"></i> {{pr.view}}</p>
+<!--                <table style="width: 100%">-->
+<!--                  <tbody *ngFor="let pp of provisionprovidersView">-->
+<!--                  <tr *ngIf="pp.provider.id== pr.id &&pp.provision.category.id==1">-->
+<!--                    <td style="text-align: left">{{pp.provision.name}}</td>-->
+<!--                    <td style="text-align: right">Free</td>-->
+<!--                  </tr>-->
+<!--                  </tbody>-->
+<!--                </table>-->
+                <p class="text-muted uk-text-bold my-0"
+                >{{pr.price}} $/ giờ</p>
+              </div>
+
+              <div class="text-warning">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <nav aria-label="Page navigation example" class="my-lg-4">
+        <ul class="pagination justify-content-center">
+          <!--                    <li class="page-item disabled">-->
+          <!--                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>-->
+          <!--                    </li>-->
+          <!--                    <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+          <!--                    <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+          <!--                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+          <!--                    <li class="page-item">-->
+          <!--                        <a class="page-link" href="#">Next</a>-->
+          <!--                    </li>-->
+        </ul>
+      </nav>
+    </div>
+    <!-- content -->
+    <div class="page-content">
+      <div class="page-content-inner">
+        <h5 class="title-header-left" style="font-weight: 700; font-size: 20px; color: #4b35a0">New Providers</h5>
+        <br>
+        <div class="row">
+
+          <div class="col-md-3 col-sm-6" *ngFor="let provider of providers | paginate: { itemsPerPage: 12, currentPage: page, totalItems: total} ">
+            <div class="card uk-inline-clip text-center animate-this">
+              <img src="{{provider.account.avatar}}" alt="" style="height: 320px; width: 300px">
+              <div class="p-3">
+                <h4 class="mb-2">{{provider.account.fullName}}</h4>
+                <div >
+
+                  <p><i class="uil-eye"></i> {{provider.view}}</p>
+<!--                  <table style="width: 100%">-->
+<!--                    <tbody *ngFor="let pp of provisionproviders">-->
+<!--                    <tr *ngIf="pp.provider.id== provider.id && provider.account.id==provider.account.id &&pp.provision.category.id==1">-->
+<!--                      <td style="text-align: left">{{pp.provision.name}}</td>-->
+<!--                      <td style="text-align: right">Free</td>-->
+<!--                    </tr>-->
+<!--                    </tbody>-->
+<!--                  </table>-->
+                  <p class="text-muted uk-text-bold my-0"
+                     *ngIf="provider.account.id==provider.account.id">{{provider.price}} $/ giờ</p>
+                </div>
+
+                <div class="text-warning">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</div>
+

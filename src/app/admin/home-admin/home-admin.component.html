@@ -1,0 +1,493 @@
+
+
+<div id="wrapper">
+
+
+    <!-- header -->
+    <div id="main_header" class="header-transparent" uk-sticky="top:10; cls-inactive :header-transparent">
+        <header>
+
+            <!-- Logo-->
+            <i class="header-traiger uil-bars" uk-toggle="target: #wrapper ; cls: mobile-active"></i>
+
+
+            <div class="h5 uk-hidden@m mr-3 mb-0"> Bootstro</div>
+            <!-- form search-->
+            <div class="head_search uk-visible@m">
+                <form [formGroup]="formSearch" (change)="search()">
+                    <div class="head_search_cont">
+                        <input value="" type="text" class="form-control"
+                               placeholder="Search for User" autocomplete="off" formControlName="search">
+                        <i class="s_icon uil-search-alt"></i>
+                    </div>
+                </form>
+            </div>
+
+            <!-- user icons -->
+            <div class="head_user">
+
+
+                <!-- browse apps  -->
+                <a href="#" class="opts_icon uk-visible@s"> <i class="uil-apps"></i> </a>
+
+                <!-- browse apps dropdown -->
+                <div uk-dropdown="pos: top;mode:click ; animation: uk-animation-scale-up" class="icon-browse">
+
+                    <a href="#" class="icon-menu-item"> <i class="uil-shop"></i> Dashboard </a>
+                    <a href="#" class="icon-menu-item"> <i class="uil-envelope-alt"></i> Messages </a>
+                    <a href="#" class="icon-menu-item"> <i class="uil-bookmark"></i> Bookmark </a>
+                    <a href="#" class="icon-menu-item"> <i class="uil-shopping-basket"></i> Cart </a>
+                    <a href="#" class="icon-menu-item"> <i class="uil-shield-check"></i> Privacy </a>
+                    <a href="#" class="icon-menu-item"> <i class="uil-bolt-alt"></i> Upgrade </a>
+                    <a href="#" class="more-app"> More Features</a>
+                </div>
+
+
+                <!-- Message  notificiation dropdown -->
+                <a href="#" class="opts_icon"> <i class="uil-envelope-alt"></i> <span>4</span> </a>
+
+                <!-- Message  notificiation dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications large">
+
+                    <!-- notivication header -->
+                    <div class="dropdown-notifications-headline">
+                        <h4>Messages</h4>
+                        <a href="#">
+                            <i class="icon-feather-settings" uk-tooltip="title: Message settings ; pos: left"></i>
+                        </a>
+                    </div>
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read">
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-2.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Alia Joseph</strong>
+                                        <p>Okay thanks.. I will be waiting for your answer</p>
+                                        <span class="time-ago"> 2 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-3.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Stella Johnson</strong>
+                                        <p> Alia Joseph just joined Messenger! say Hi. </p>
+                                        <span class="time-ago"> 7 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-1.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Alex Dolgove</strong>
+                                        <p> Alex will explain you how to keep the structure ....</p>
+                                        <span class="time-ago"> 19 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-4.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Adrian Mohani</strong>
+                                        <p> Okay thanks.. I will be waiting for your answer </p>
+                                        <span class="time-ago"> Yesterday </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="dropdown-notifications-footer">
+                        <a href="#"> sell all <i class="icon-line-awesome-long-arrow-right"></i> </a>
+                    </div>
+
+
+                </div>
+
+
+                <!-- notificiation icon  -->
+                <a href="#" class="opts_icon"> <i class="uil-bell"></i> <span>3</span> </a>
+
+                <!-- notificiation dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications">
+
+                    <!-- notivication header -->
+                    <div class="dropdown-notifications-headline">
+                        <h4>Notifications </h4>
+                        <a href="#">
+                            <i class="icon-feather-settings"
+                               uk-tooltip="title: Notifications settings ; pos: left"></i>
+                        </a>
+                    </div>
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read">
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-danger">
+                                            <i class="uil-shopping-basket text-danger"></i></span>
+                                    <span class="notification-text"> New Order Recieved
+                                            <br> <span class="time-ago"> 9 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-success">
+                                            <i class="uil-user-plus text-success"></i></span>
+                                    <span class="notification-text"> New customer registered
+                                            <br> <span class="time-ago"> 19 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-danger">
+                                            <i class="icon-feather-database text-danger"></i></span>
+                                    <span class="notification-text"> Server Limit Reached!
+                                            <br> <span class="time-ago"> 12 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-primary">
+                                            <i class="uil-apps text-primary"></i></span>
+                                    <span class="notification-text">
+                                            <strong>10+</strong> Apps ready for update
+                                            <br> <span class="time-ago"> Yesterday </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-success">
+                                            <i class="uil-user-plus text-success"></i></span>
+                                    <span class="notification-text"> New customer registered
+                                            <br> <span class="time-ago"> Yesterday </span>
+                                        </span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- profile -image -->
+                <a class="opts_account"> <img src="{{accountLogin?.avatar}}" alt=""></a>
+
+                <!-- profile dropdown-->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications small">
+
+                    <!-- User Name / Avatar -->
+                    <a href="#">
+
+                        <div class="dropdown-user-details">
+                            <div class="dropdown-user-avatar">
+                                <a class="opts_account">
+                                    <img src="{{accountLogin?.avatar}}" alt=""></a>
+                            </div>
+                            <div class="dropdown-user-name">
+                               Hello Admin ({{accountLogin?.username}})
+                            </div>
+                        </div>
+
+                    </a>
+                    <!-- User menu -->
+
+                    <ul class="dropdown-user-menu">
+                        <li><a href="#"> <i class="uil-bolt"></i> Go PRO</a></li>
+                        <li><a (click)="goToShowAllAccount()"> <i class="uil-user"></i> All Account </a></li>
+                        <li><a (click)="goToShowAllBill()" > <i class="uil-envelope"></i> All Bill </a></li>
+                        <li><a (click)="goToShowAllProvider()"> <i class="uil-edit"></i> All Provider </a></li>
+                        <li><a href="profile-setting.html"> <i class="uil-cog"></i> Account Settings</a></li>
+                        <li class="menu-divider"></li>
+                        <li><a (click)="logout()"> <i class="icon-feather-log-out"></i> Sing Out</a></li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+    </div>
+
+    <div class="box-gradient-home"></div>
+
+    <!-- content -->
+    <div class="page-content">
+        <div class="page-content-inner">
+
+            <h2 class="text-white"> List User</h2>
+
+            <nav id="breadcrumbs" class="text-white">
+                <ul>
+                    <li><br></li>
+                    <br>
+                </ul>
+            </nav>
+
+
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header actions-toolbar border-0">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="d-inline-block mb-0">Users</h4>
+                        <div class="d-flex">
+
+                            <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="Search product"
+                               title="" aria-expanded="false">
+                                <i class="uil-search"></i>
+                            </a>
+                            <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+                                <form class="uk-search uk-search-navbar uk-width-1-1">
+                                    <input class="uk-search-input shadow-0" type="search" placeholder="Search..."
+                                           autofocus>
+                                </form>
+                            </div>
+
+                            <a href="#" class="btn btn-icon btn-hover btn-circle">
+                                <i class="uil-filter"></i>
+                            </a>
+<!--                            <div uk-dropdown="mode: click ; pos: bottom-right ; animation:uk-animation-scale-up"-->
+<!--                                 class="p-0 dropdown-menu">-->
+<!--                                <ul>-->
+<!--                                    <li class="uk-active"><a href="#"> Newest </a></li>-->
+<!--                                    <li><a href="#">From A-Z</a></li>-->
+<!--                                    <li><a href="#">From Z-A</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+
+
+                            <a href="#" class="btn btn-icon btn-hover btn-circle">
+                                <i class="uil-ellipsis-h"></i>
+                            </a>
+                            <div uk-dropdown="mode: click ; pos: bottom-right ; animation:uk-animation-scale-up"
+                                 class="p-0 dropdown-menu">
+                                <ul>
+                                    <li><a href="#"> Refresh </a></li>
+                                    <li><a href="#">Manage</a></li>
+                                    <li><a href="#">Setting</a></li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Table -->
+                <div class="table-responsive">
+                    <table class="table align-items-center">
+                        <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Date Of Birth</th>
+                            <th scope="col">Wallet</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Created at</th>
+                            <th scope="col">VIP</th>
+                            <th scope="col">New</th>
+
+
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody class="list" *ngFor="let a of accounts| paginate: { itemsPerPage: 6, currentPage: p, totalItems: total }">
+                        <tr>
+                            <th scope="row">
+                                <div class="media align-items-center">
+                                    <div>
+                                        <img alt="Image placeholder" src="{{a.avatar}}"
+                                             style="height: 120px; width: 100px;">
+                                    </div>
+                                    <div class="media-body ml-2">
+                                        <a href="shop-product.html" class="name h6 mb-2 text-sm">{{a.fullName}}</a>
+                                        <span class="d-block text-warning">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                                </span>
+                                    </div>
+                                </div>
+                            </th>
+                            <td> {{a.birthday}} </td>
+                            <td> {{a.wallet}} USD</td>
+                            <td> {{a.gender}} </td>
+                            <td *ngIf="a.statusAccount == 1"><span
+                                    class="badge badge-success rounded-pill">Active</span></td>
+                            <td *ngIf="a.statusAccount == 2"><span class="badge badge-dark rounded-pill">Locked</span>
+                            </td>
+                            <td> {{a.dateOfRegister}} </td>
+                            <td *ngIf="a.statusVip == 2"><span
+                                    class="badge badge-danger rounded-pill">VIP</span></td>
+
+                            <td *ngIf="a.statusVip == 1||a.statusVip==3"><span
+                                    class="badge badge-dark rounded-pill">Normal</span></td>
+                            <td *ngIf="a.statusVip==3"><span
+                                    class="badge badge-warning rounded-pill">! Request up Vip</span></td>
+                            <td *ngIf="a.statusVip!=3"><span
+                                    class="badge badge-dark rounded-pill">Nothing</span></td>
+
+                            <td class="text-center">
+                                <!-- Actions -->
+                                <div class="actions ml-3">
+                                    <button (click)="findAccountById(a.id)"
+                                            class="btn btn-icon btn-hover btn-sm btn-circle"
+                                            uk-tooltip="Quick view" data-bs-toggle="modal"
+                                            data-bs-target="#myModal">
+                                        <i class="uil-external-link-alt "></i></button>
+                                    <button (click)="upVip(a.id)"
+                                            class="btn btn-icon btn-hover btn-sm btn-circle"
+                                            uk-tooltip="Up VIP" >
+                                        <i class="uil-arrow-circle-up"></i></button>
+                                    <button (click)="blockAccount(a.id)"
+                                            class="btn btn-icon btn-hover btn-sm btn-circle"
+                                            uk-tooltip="Block">
+                                        <i class="uil-toggle-on "></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- footer
+           ================================================== -->
+        <div class="footer">
+            <div class="uk-grid-collapse" uk-grid>
+                <div class="uk-width-expand@s uk-first-column">
+                    <p>© 2020 <strong>Bootstro</strong>. All Rights Reserved. </p>
+                </div>
+                <div class="uk-width-auto@s">
+                    <nav class="footer-nav-icon">
+                        <ul>
+                            <li><a href="#"><i class="icon-brand-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-brand-dribbble"></i></a></li>
+                            <li><a href="#"><i class="icon-brand-youtube"></i></a></li>
+                            <li><a href="#"><i class="icon-brand-twitter"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <section style="background-color: #eee;">
+                        <div class="container py-5">
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card mb-4">
+                                        <div class="card-body text-center">
+                                            <img src="{{account?.avatar}}"
+                                                 class="rounded-circle img-fluid" style="width: 150px;">
+                                            <br>
+<!--                                            <h5 class="my-3">Total : {{account?.view}}</h5>-->
+                                            <p class="text-muted mb-4"><b>Start at:</b> {{account?.dateOfRegister}}</p>
+                                            <div class="d-flex justify-content-center mb-2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <p class="mb-0">Full Name</p>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="text-muted mb-0">{{account?.fullName}}</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <p class="mb-0">Height</p>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="text-muted mb-0">{{account?.height}}</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <p class="mb-0">Weight</p>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="text-muted mb-0">{{account?.weight}}</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <p class="mb-0">Date of Birth</p>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="text-muted mb-0">{{account?.birthday}}</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <p class="mb-0">Address</p>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="text-muted mb-0">{{account?.country}}</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

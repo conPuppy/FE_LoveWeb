@@ -1,0 +1,22 @@
+<div uk-height-viewport="expand: true" class="uk-flex uk-flex-middle">
+    <div class="uk-width-1-3@m uk-width-1-2@s m-auto">
+        <div class="px-2 uk-animation-scale-up">
+            <div class="my-4 uk-text-center">
+                <h1 class="mb-2"> Login Form  </h1>
+                <p class="my-2">Back to Home page <a routerLink=""> Home </a> </p>
+            </div>
+            <form [formGroup]="formForgetPass" (submit)="sendEmailForgetPass()">
+                <div class="uk-position-relative w-100">
+                <input class="uk-input" type="email" placeholder="Your email " formControlName="email">
+            </div>
+                <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.email">
+                    <div class="error-message"
+                         *ngIf="formForgetPass?.get('email')?.hasError(validation.type) && (formForgetPass?.get('email')?.dirty || formForgetPass?.get('email')?.touched)">
+                        {{validation.message}}</div>
+                </div>
+
+                <button type="submit" [disabled]="!formForgetPass" class="btn btn-primary btn-block mb-4"  style="background-color: #6e00ff;border-color: #6e00ff;">Send</button>
+            </form>
+        </div>
+    </div>
+</div>

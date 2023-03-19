@@ -1,0 +1,438 @@
+<!--nhánh dev-->
+
+
+<div id="wrapper" xmlns:text-align="http://www.w3.org/1999/xhtml">
+
+
+    <!-- header -->
+    <div id="main_header" class="header-transparent" uk-sticky="top:10; cls-inactive :header-transparent">
+        <header>
+
+            <!-- Logo-->
+            <i class="header-traiger uil-bars" uk-toggle="target: #wrapper ; cls: mobile-active"></i>
+
+
+            <div class="h5 uk-hidden@m mr-3 mb-0"> Date Web</div>
+            <!-- form search-->
+            <div class="head_search uk-visible@m">
+                <form>
+                    <div class="head_search_cont">
+                        <input value="" type="text" class="form-control"
+                               placeholder="Search for Customers, Products, Files and more.." autocomplete="off">
+                        <i class="s_icon uil-search-alt"></i>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- user icons -->
+            <div class="head_user">
+
+
+                <!-- browse apps  -->
+                <a href="#" class="opts_icon uk-visible@s"> <i class="uil-shop"></i></a>
+                <a href="#" class="opts_icon uk-visible@s"> <i class="uil-shopping-basket"></i></a>
+
+                <!-- browse apps dropdown -->
+                <div uk-dropdown="pos: top;mode:click ; animation: uk-animation-scale-up" class="icon-browse">
+
+                    <!--          <a href="#" class="icon-menu-item"> <i class="uil-shop"></i> Dashboard </a>-->
+                    <!--          <a href="#" class="icon-menu-item"> <i class="uil-envelope-alt"></i> Messages </a>-->
+                    <!--          <a href="#" class="icon-menu-item"> <i class="uil-bookmark"></i> Bookmark </a>-->
+                    <!--          <a href="#" class="icon-menu-item"> <i class="uil-shopping-basket"></i> Cart </a>-->
+                    <!--          <a href="#" class="icon-menu-item"> <i class="uil-shield-check"></i> Privacy </a>-->
+                    <!--          <a href="#" class="icon-menu-item"> <i class="uil-bolt-alt"></i> Upgrade </a>-->
+                    <!--          <a href="#" class="more-app"> More Features</a>-->
+                </div>
+
+
+                <!-- Message  notificiation dropdown -->
+                <a href="#" class="opts_icon"> <i class="uil-envelope-alt"></i> <span>4</span> </a>
+
+                <!-- Message  notificiation dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications large">
+
+                    <!-- notivication header -->
+                    <div class="dropdown-notifications-headline">
+                        <h4>Messages</h4>
+                        <a href="#">
+                            <i class="icon-feather-settings" uk-tooltip="title: Message settings ; pos: left"></i>
+                        </a>
+                    </div>
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read">
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-2.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Alia Joseph</strong>
+                                        <p>Okay thanks.. I will be waiting for your answer</p>
+                                        <span class="time-ago"> 2 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-3.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Stella Johnson</strong>
+                                        <p> Alia Joseph just joined Messenger! say Hi. </p>
+                                        <span class="time-ago"> 7 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-1.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Alex Dolgove</strong>
+                                        <p> Alex will explain you how to keep the structure ....</p>
+                                        <span class="time-ago"> 19 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-4.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Adrian Mohani</strong>
+                                        <p> Okay thanks.. I will be waiting for your answer </p>
+                                        <span class="time-ago"> Yesterday </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="dropdown-notifications-footer">
+                        <a href="#"> sell all <i class="icon-line-awesome-long-arrow-right"></i> </a>
+                    </div>
+
+
+                </div>
+
+
+                <!-- notificiation icon  -->
+                <a href="#" class="opts_icon"> <i class="uil-bell"></i> <span>3</span> </a>
+
+                <!-- notificiation dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications">
+
+                    <!-- notivication header -->
+                    <div class="dropdown-notifications-headline">
+                        <h4>Notifications </h4>
+                        <a href="#">
+                            <i class="icon-feather-settings"
+                               uk-tooltip="title: Notifications settings ; pos: left"></i>
+                        </a>
+                    </div>
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read">
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-danger">
+                                            <i class="uil-shopping-basket text-danger"></i></span>
+                                    <span class="notification-text"> New Order Recieved
+                                            <br> <span class="time-ago"> 9 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-success">
+                                            <i class="uil-user-plus text-success"></i></span>
+                                    <span class="notification-text"> New customer registered
+                                            <br> <span class="time-ago"> 19 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-danger">
+                                            <i class="icon-feather-database text-danger"></i></span>
+                                    <span class="notification-text">  Server Limit Reached!
+                                            <br> <span class="time-ago"> 12 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-primary">
+                                            <i class="uil-apps text-primary"></i></span>
+                                    <span class="notification-text">
+                                            <strong>10+</strong>  Apps ready for update
+                                            <br> <span class="time-ago"> Yesterday </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-success">
+                                            <i class="uil-user-plus text-success"></i></span>
+                                    <span class="notification-text"> New customer registered
+                                            <br> <span class="time-ago"> Yesterday </span>
+                                        </span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- profile -image -->
+                <a class="opts_account"> <img src="assets/images/team/team-1.jpg" alt=""></a>
+
+                <!-- profile dropdown-->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications small">
+
+                    <!-- User Name / Avatar -->
+                    <a href="#">
+
+                        <div class="dropdown-user-details">
+                            <div class="dropdown-user-avatar">
+                                <img src="assets/images/team/team-1.jpg" alt="">
+                            </div>
+                            <div class="dropdown-user-name">
+                                Richard Ali <span> verified <i class="uil-check"></i> </span>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <!-- User menu -->
+
+                    <ul class="dropdown-user-menu">
+                        <li><a href="#"> <i class="uil-bolt"></i> Go PRO</a></li>
+                        <li><a (click)="goToProfile()"> <i class="uil-user"></i> My Profile </a></li>
+                        <li><a > <i class="uil-invoice"></i>My Bill</a></li>
+                        <li><a (click)="goToEditProfile()"> <i class="uil-edit"></i> Edit Profile </a></li>
+                        <li><a href="profile-setting.html"> <i class="uil-cog"></i> Account Settings</a></li>
+                        <li class="menu-divider"></li>
+                        <li><a (click)="logout()"> <i class="icon-feather-log-out"></i> Sing Out</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+    </div>
+
+    <!-- menu -->
+    <div class="page-menu">
+        <!-- btn close on small devices -->
+        <span class="btn-menu-close" uk-toggle="target: #wrapper ; cls: mobile-active"></span>
+        <!-- traiger btn -->
+        <span class="btn-menu-trigger" uk-toggle="target: #wrapper ; cls: menu-collapsed"></span>
+
+        <!-- logo -->
+        <div class="logo uk-visible@s">
+            <a href="dashboard.html"> <img src="assets/images/logo.svg" alt=""> <span> Bootstro</span> </a>
+        </div>
+        <div class="page-menu-inner" data-simplebar>
+            <ul>
+                <li><a href="dashboard.html"><i class="uil-home-alt"></i> <span> Dashboard </span></a></li>
+            </ul>
+
+
+            <ul data-submenu-title="Apps">
+                <li><a href="app-calender.html"><i class="uil-calendar-alt"></i> <span> Calendar</span></a></li>
+                <li><a href="chat.html"><i class="uil-comment-alt-dots"></i> <span>Chat</span> </a></li>
+                <li><a href="#"><i class="uil-envelope-alt"></i> <span>Email</span> </a>
+                    <ul>
+                        <li>
+                            <a href="email-inbox.html"> Inbox </a>
+                            <a href="email-inbox-read.html"> Email Read </a>
+                            <a href="email-compose.html"> Email Compose </a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="uil-shopping-basket"></i> <span>E-commerce</span> </a>
+                    <ul>
+                        <li><a href="shop-card.html"> Products Grid </a></li>
+                        <li><a href="shop-listing.html"> Products List </a></li>
+                        <li><a href="shop-product.html"> Product </a></li>
+                        <li><a href="shop-cart.html"> Products Cart </a></li>
+                        <li><a href="shop-checkout.html"> Products Checkout </a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="uil-users-alt"></i> <span>Users</span> </a>
+                    <ul>
+                        <li><a href="user-card.html"> Users Grid </a></li>
+                        <li><a href="user-listing.html"> Users List </a></li>
+                        <li><a href="user-view.html"> User view </a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul data-submenu-title="Pages">
+                <li><a href="profile.html"><i class="uil-user-square"></i> <span> Profile </span> </a></li>
+                <li><a href="profile-setting.html"><i class="uil-cog"></i> <span> Setting </span> </a></li>
+                <li><a href="page-invoice.html"><i class="uil-invoice"></i> <span> Invoice </span> </a></li>
+                <li><a href="page-gallery.html"><i class="uil-images"></i> <span> Gallery </span> </a></li>
+                <li><a href="page-faqs.html"><i class="uil-equal-circle"></i> <span> FAQ </span> </a></li>
+                <li><a href="page-pricing.html"><i class="uil-dollar-sign-alt"></i> <span> pricing </span> </a></li>
+                <li><a href="error.html"><i class="uil-minus-circle"></i> <span> Error </span> </a></li>
+                <li><a href="page-maintanence.html"><i class="uil-sync-exclamation"></i> <span> Maintence </span> </a>
+                </li>
+                <li><a href="page-comming-soon.html"><i class="uil-stopwatch"></i> <span> Comming soon </span> </a></li>
+            </ul>
+
+            <ul data-submenu-title="Development">
+                <li><a href="development-elements.html"><i class="uil-layers"></i> <span> UI Elements </span> </a></li>
+                <li><a href="development-components.html"><i class="uil-code"></i> <span> UI Components </span> </a>
+                </li>
+                <li><a href="development-icons.html"><i class="icon-feather-flag"></i> <span> Icon Pack </span> </a>
+                </li>
+
+                <li><a href="#"><i class="uil-check-circle"></i> <span> Forms </span> </a>
+                    <ul>
+                        <li><a href="form-element.html"> Form Elements </a></li>
+                        <li><a href="form-layouts.html"> Form Layouts </a></li>
+                        <li><a href="form-validation.html"> Form Validation </a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="uil-list-ul"></i> <span> Tables </span> </a>
+                    <ul>
+                        <li><a href="table-basic.html"> Basic Table </a></li>
+                        <li><a href="table-database.html"> Data Table </a></li>
+                    </ul>
+                </li>
+
+                <li><a href="charts.html"><i class="uil-chart"></i> <span> Charts </span> </a></li>
+
+            </ul>
+
+            <ul data-submenu-title="Extras" class="mb-4">
+                <li><a href="#"><i class="uil-spin"></i> <span> Authentication </span>
+                </a>
+                    <ul>
+                        <li><a href="form-login.html">Login 1</a></li>
+                        <li><a href="form-modern-login.html">Login 2</a></li>
+                        <li><a href="form-register.html">Register 1</a></li>
+                        <li><a href="form-modern-singup.html">Register 2</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="box-gradient-home"></div>
+
+    <!-- content -->
+    <div class="page-content">
+        <div class="page-content-inner">
+
+            <p class="text-white"> Providers</p>
+
+            <nav id="breadcrumbs" class="text-white">
+                <ul>
+                    <li><a href="#"> Dashboard </a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li> Providers-grid</li>
+                </ul>
+            </nav>
+
+
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6" *ngFor="let provider of providers | paginate: { itemsPerPage: 12, currentPage: page, totalItems: total} ">
+                    <div class="card uk-inline-clip text-center animate-this">
+                        <img src="{{provider.account.avatar}}" alt="" style="height: 320px; width: 300px">
+                        <div class="p-3">
+                            <h4 class="mb-2">{{provider.account.fullName}}</h4>
+                            <div >
+                                <table style="width: 100%">
+                                    <tbody *ngFor="let pp of provisionproviders">
+                                    <tr *ngIf="pp.provider.id== provider.id && provider.account.id==provider.account.id &&pp.provision.category.id==1">
+                                        <td style="text-align: left">{{pp.provision.name}}</td>
+                                        <td style="text-align: right">Free</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <p class="text-muted uk-text-bold my-0"
+                                   *ngIf="provider.account.id==provider.account.id">{{provider.price}} $/ giờ</p>
+                            </div>
+
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <nav aria-label="Page navigation example" class="my-lg-4">
+                <ul class="pagination justify-content-center">
+<!--                    <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>-->
+<!--                    <li class="page-item disabled">-->
+<!--                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>-->
+<!--                    </li>-->
+<!--                    <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+<!--                    <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--                    <li class="page-item">-->
+<!--                        <a class="page-link" href="#">Next</a>-->
+<!--                    </li>-->
+                </ul>
+            </nav>
+
+
+        </div>
+
+
+        <!-- footer
+           ================================================== -->
+        <div class="footer">
+            <div class="uk-grid-collapse" uk-grid>
+                <div class="uk-width-expand@s uk-first-column">
+                    <p>© 2020 <strong>Bootstro</strong>. All Rights Reserved. </p>
+                </div>
+                <div class="uk-width-auto@s">
+                    <nav class="footer-nav-icon">
+                        <ul>
+                            <li><a href="#"><i class="icon-brand-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-brand-dribbble"></i></a></li>
+                            <li><a href="#"><i class="icon-brand-youtube"></i></a></li>
+                            <li><a href="#"><i class="icon-brand-twitter"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+

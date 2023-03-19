@@ -1,0 +1,448 @@
+<div id="wrapper" xmlns:text-align="http://www.w3.org/1999/xhtml">
+
+
+    <!-- header -->
+    <div id="main_header" class="header-transparent" uk-sticky="top:10; cls-inactive :header-transparent">
+        <header>
+
+            <!-- Logo-->
+            <i class="header-traiger uil-bars" uk-toggle="target: #wrapper ; cls: mobile-active" (click)="goToTheHome()"></i>
+
+
+            <div class="h5 uk-hidden@m mr-3 mb-0"> Bootstro</div>
+            <!-- form search-->
+            <div class="head_search uk-visible@m">
+                <form>
+                    <div class="head_search_cont">
+                        <input value="" type="text" class="form-control"
+                               placeholder="Search for Customers, Products, Files and more.." autocomplete="off">
+                        <i class="s_icon uil-search-alt"></i>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- user icons -->
+            <div class="head_user">
+
+
+                <!-- browse apps  -->
+                <a href="#" class="opts_icon uk-visible@s"> <i class="uil-shop"></i></a>
+                <a href="#" class="opts_icon uk-visible@s"> <i class="uil-shopping-basket"></i> <span>1</span></a>
+                <!-- cart apps dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications large">
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read" >
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th scope="col" style="vertical-align: text-top; text-align: left; font: 0.875rem / 1.5 Consolas, monaco, monospace;">Provider</th>
+                                        <th scope="col" style="vertical-align: text-top; text-align: left; font: 0.875rem / 1.5 Consolas, monaco, monospace;">Order Time (giờ)</th>
+                                        <th scope="col" style="vertical-align: text-top; text-align: left; font: 0.875rem / 1.5 Consolas, monaco, monospace;">Total ($/giờ)</th>
+                                        <th scope="col" style="vertical-align: text-top; text-align: left; font: 0.875rem / 1.5 Consolas, monaco, monospace;"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr *ngFor="let o of orderLovers">
+                                        <td><span class="notification-avatar" style="width: 26px; height: 26px">
+                                            <img src="{{o?.provider?.account?.avatar}}" alt="">
+                                        </span></td>
+                                        <td style="text-align: center; font: 0.875rem / 1.5 Consolas, monaco, monospace;color: #666;">{{o?.provider?.account?.fullName}}</td>
+                                        <td style="text-align: center;font: 0.875rem / 1.5 Consolas, monaco, monospace;color: #666;">{{o.orderTime}}</td>
+                                        <td style="text-align: center;font: 0.875rem / 1.5 Consolas, monaco, monospace;color: #666;">{{o.total}} </td>
+                                        <!--                                        <td><button type="submit" class="btn btn-danger" data-bs-dismiss="modal" (click)="createOrderLover()">Order</button></td>-->
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="dropdown-notifications-footer">
+                        <a href="#"> sell all <i class="icon-line-awesome-long-arrow-right"></i> </a>
+                    </div>
+                </div>
+
+
+                <!-- Message  notificiation dropdown -->
+                <a href="#" class="opts_icon"> <i class="uil-envelope-alt"></i> <span>4</span> </a>
+
+                <!-- Message  notificiation dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications large">
+
+                    <!-- notivication header -->
+                    <div class="dropdown-notifications-headline">
+                        <h4>Messages</h4>
+                        <a href="#">
+                            <i class="icon-feather-settings" uk-tooltip="title: Message settings ; pos: left"></i>
+                        </a>
+                    </div>
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read">
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-2.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Alia Joseph</strong>
+                                        <p>Okay thanks.. I will be waiting for your answer</p>
+                                        <span class="time-ago"> 2 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-3.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Stella Johnson</strong>
+                                        <p> Alia Joseph just joined Messenger! say Hi. </p>
+                                        <span class="time-ago"> 7 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-1.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Alex Dolgove</strong>
+                                        <p> Alex will explain you how to keep the structure ....</p>
+                                        <span class="time-ago"> 19 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-4.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Adrian Mohani</strong>
+                                        <p> Okay thanks.. I will be waiting for your answer </p>
+                                        <span class="time-ago"> Yesterday </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="dropdown-notifications-footer">
+                        <a href="#"> sell all <i class="icon-line-awesome-long-arrow-right"></i> </a>
+                    </div>
+
+
+                </div>
+
+
+                <!-- notificiation icon  -->
+                <a href="#" class="opts_icon"> <i class="uil-bell"></i> <span>3</span> </a>
+
+                <!-- notificiation dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications">
+
+                    <!-- notivication header -->
+                    <div class="dropdown-notifications-headline">
+                        <h4>Notifications </h4>
+                        <a href="#">
+                            <i class="icon-feather-settings"
+                               uk-tooltip="title: Notifications settings ; pos: left"></i>
+                        </a>
+                    </div>
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read">
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-danger">
+                                            <i class="uil-shopping-basket text-danger"></i></span>
+                                    <span class="notification-text"> New Order Recieved
+                                            <br> <span class="time-ago"> 9 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-success">
+                                            <i class="uil-user-plus text-success"></i></span>
+                                    <span class="notification-text"> New customer registered
+                                            <br> <span class="time-ago"> 19 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-danger">
+                                            <i class="icon-feather-database text-danger"></i></span>
+                                    <span class="notification-text">  Server Limit Reached!
+                                            <br> <span class="time-ago"> 12 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-primary">
+                                            <i class="uil-apps text-primary"></i></span>
+                                    <span class="notification-text">
+                                            <strong>10+</strong>  Apps ready for update
+                                            <br> <span class="time-ago"> Yesterday </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-success">
+                                            <i class="uil-user-plus text-success"></i></span>
+                                    <span class="notification-text"> New customer registered
+                                            <br> <span class="time-ago"> Yesterday </span>
+                                        </span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+                <!-- profile -image -->
+                <a class="opts_account"> <img src="{{account?.avatar}}" alt=""></a>
+
+                <!-- profile dropdown-->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications small">
+
+                    <!-- User Name / Avatar -->
+                    <a href="#">
+
+                        <div class="dropdown-user-details">
+                            <div class="dropdown-user-avatar">
+                                <a class="opts_account">
+                                    <img src="{{account?.avatar}}" alt=""></a>
+                            </div>
+                            <div class="dropdown-user-name">
+                                {{account?.username}} <span> {{account?.wallet}} <i class="icon-feather-dollar-sign"></i> </span>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <!-- User menu -->
+
+                    <ul class="dropdown-user-menu">
+                        <li><a class="btn-warning"  *ngIf="statusProvider==3"> <i class="uil-user"></i> Wait admin accept!</a></li>
+                        <li><a class="btn-success"  *ngIf="statusProvider==1"> <i class="uil-user" ></i> Ready</a></li>
+                        <li><a class="btn-danger"  *ngIf="statusProvider==2"> <i class="uil-user" ></i> Busy</a></li>
+                        <li><a class="btn-success" (click)="createProvider()" *ngIf="statusProvider!=1&&statusProvider!=2&&statusProvider!=3"> <i class="uil-bolt" ></i> Become Provider</a></li>
+                        <li><a (click)="goToProfile()"> <i class="uil-user"></i> My Profile </a></li>
+                        <li><a (click)="goToMyOrder()" > <i class="uil-invoice"></i> My Order </a></li>
+                        <li><a (click)="goToEditProfile()"> <i class="uil-edit"></i> Edit Profile </a></li>
+                        <li><a (click)="goToProviderSetting()"> <i class="uil-cog"></i> Provider Settings</a></li>
+                        <li class="menu-divider"></li>
+                        <li><a (click)="logout()"> <i class="icon-feather-log-out"></i> Sing Out</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+    </div>
+
+    <div class="box-gradient-home"></div>
+
+    <!-- content -->
+    <div class="page-content">
+
+        <div class="profile">
+            <div class="profile-cover">
+
+                <!-- profile cover -->
+                <img src="assets/images/team/user-cover.jpg" alt="">
+
+            </div>
+
+            <div class="page-content-inner">
+                <div class="profile-details">
+                    <div class="left-side">
+                        <div class="profile-image">
+                            <a class="opts_account" href="#">
+                                <img  src="{{accountChange?.avatar}}" alt="">
+                            </a>
+                        </div>
+                        <div class="profile-details-info">
+                            <h3> {{accountChange?.fullName}} </h3>
+                        </div>
+                    </div>
+                    <div class="right-side uk-visible@m">
+                        <div class="btn-subscribe">
+                            <button *ngIf="accountChange?.statusVip==1" (click)="requestVip()" class="btn btn-warning btn-sm">
+                                <i class="icon-feather-user"></i> Up Account VIP </button>
+                            <button *ngIf="accountChange?.statusVip==2" class="btn btn-danger btn-sm">
+                                <i class="icon-feather-user"></i> Account VIP </button>
+                            <button  *ngIf="accountChange?.statusVip==3" class="btn btn-success btn-sm">
+                                <i class="icon-feather-user"></i> Request Sended </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-profile" k-sticky="offset:61;media : @s">
+                    <nav class="responsive-tab">
+                        <ul>
+                            <li class="uk-active"><a class="active" href="#0">Your Profile</a></li>
+                        </ul>
+                    </nav>
+                    <form class="nav-profile-saerchbox">
+                        <i class="uil-search"></i>
+                        <input class="uk-input" type="text" value="Search Post...">
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="page-content-inner">
+
+            <div class="row">
+
+                <div class="col-lg-9 col-12">
+                    <div class="card mt-4">
+                        <div class="card-header bg-light">
+                            <h4> Information </h4>
+                        </div>
+                        <form [formGroup]="formChangeInfo"  (ngSubmit)="changeInfo()" class="uk-child-width-1-2@s uk-grid-small p-4 uk-grid" uk-grid="">
+                            <input hidden="hidden" formControlName="id">
+                            <div class="uk-first-column">
+                                <h5 class="uk-text-bold mb-2"> Full name </h5>
+                                <input type="text" class="uk-input" placeholder="Fullname" formControlName="fullName" >
+                            </div>
+                            <div>
+                                <h5 class="uk-text-bold mb-2"> Username </h5>
+                                <input type="text" class="uk-input" placeholder="Username" (change)="funcCheckDuplicateUsername(formChangeInfo.get('username')?.value)" formControlName="username">
+                                <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.username">
+                                    <div class="error-message"
+                                         *ngIf="formChangeInfo?.get('username')?.hasError(validation.type) && (formChangeInfo?.get('username')?.dirty || formChangeInfo?.get('username')?.touched)">
+                                        {{validation.message}}</div>
+                                </div>
+                                <div class="uk-position-relative w-100" *ngIf="checkDuplicateUsername">
+                                    <div class="error-message">
+                                        Account already exists!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="uk-grid-margin uk-first-column">
+                                <h5 class="uk-text-bold mb-2"> Email </h5>
+                                <input type="email" class="uk-input" placeholder="Email" (change)="funcCheckDuplicateEmail(formChangeInfo.get('email')?.value)" formControlName="email">
+                                <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.email">
+                                    <div class="error-message"
+                                         *ngIf="formChangeInfo?.get('email')?.hasError(validation.type) && (formChangeInfo?.get('email')?.dirty || formChangeInfo?.get('email')?.touched)">
+                                        {{validation.message}}</div>
+                                </div>
+                                <div class="uk-position-relative w-100" *ngIf="checkDuplicateEmail">
+                                    <div class="error-message">
+                                        Email already exists!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="uk-grid-margin">
+                                <h5 class="uk-text-bold mb-2"> Birthday </h5>
+                                <input type="date" class="uk-input" placeholder="BirthdayP" formControlName="birthday">
+                            </div>
+                            <div class="uk-grid-margin uk-first-column">
+                                <h5 class="uk-text-bold mb-2"> City </h5>
+                                <input type="text" class="uk-input" placeholder="Your City" formControlName="city">
+                            </div>
+                            <div class="uk-grid-margin">
+                                <h5 class="uk-text-bold mb-2"> Country </h5>
+                                <input type="text" class="uk-input" placeholder="Your Country" formControlName="country">
+                            </div>
+                            <div class="uk-grid-margin uk-first-column">
+                                <h5 class="uk-text-bold mb-2"> Gender </h5>
+                                <fieldset formGroupName="genderObj">
+                                    <select class="selectpicker"  formControlName="gender">
+                                        <option value="Orther">Orther</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+
+
+                        <hr class="mb-0">
+                        <div class="uk-flex uk-flex-right p-3">
+                            <a (click)="goToProfile()" class="btn btn-soft-dark btn-sm mr-2">Cancle</a>
+                            <button [disabled]="!formChangeInfo.valid" type="submit"  class="btn btn-primary btn-sm">Save Changes</button>
+                        </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-12">
+
+                    <nav class="card responsive-tab style-3 setting-menu"
+                         uk-sticky="top:30 ; offset:100; media:@m ;bottom:true">
+                        <ul>
+                            <li ><a (click)="goToProfile()"> <i class="uil-user"></i> Profile </a></li>
+                            <li><a routerLink="/changeInfo"> <i class="uil-info-circle"></i> Info </a></li>
+                            <li><a routerLink="/changeAvatar"> <i class="uil-scenery"></i> Avatar </a></li>
+                            <li><a routerLink="/changeAppearance"> <i class="uil-hunting"></i> Appearance </a></li>
+                            <li><a routerLink="/changePassword"> <i class="uil-unlock-alt"></i> Password </a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- footer
+        ================================================== -->
+        <div class="footer">
+            <div class="uk-grid-collapse" uk-grid>
+                <div class="uk-width-expand@s uk-first-column">
+                    <p>© 2020 <strong>Bootstro</strong>. All Rights Reserved. </p>
+                </div>
+                <div class="uk-width-auto@s">
+                    <nav class="footer-nav-icon">
+                        <ul>
+                            <li><a href="#"><i class="icon-brand-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-brand-dribbble"></i></a></li>
+                            <li><a href="#"><i class="icon-brand-youtube"></i></a></li>
+                            <li><a href="#"><i class="icon-brand-twitter"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

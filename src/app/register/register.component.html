@@ -1,0 +1,121 @@
+<!--&lt;!&ndash; Content-->
+<!--    ================================================== &ndash;&gt;-->
+<div uk-height-viewport="expand: true" class="uk-flex uk-flex-middle">
+    <div class="uk-width-1-3@m uk-width-1-2@s m-auto">
+        <div class="px-2 uk-animation-scale-up">
+            <div class="my-4 uk-text-center">
+                <h1 class="mb-2"> Register Form  </h1>
+                <p class="my-2">Do you have an a account. <a routerLink="/login"> Log in </a> </p>
+            </div>
+            <form [formGroup]="formRegister" (ngSubmit)="createAccount()">
+                <div class="uk-form-group">
+                    <div class="uk-position-relative w-100">
+                        <input class="uk-input" type="text" (ngModelChange)="funcCheckDuplicateUsername(formRegister.get('username')?.value)" placeholder="Your Username" formControlName="username">
+                    </div>
+                    <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.username">
+                        <div class="error-message"
+                             *ngIf="formRegister?.get('username')?.hasError(validation.type) && (formRegister?.get('username')?.dirty || formRegister?.get('username')?.touched)">
+                            {{validation.message}}</div>
+                    </div>
+                    <div class="uk-position-relative w-100" *ngIf="checkDuplicateUsername">
+                        <div class="error-message">
+                            Account already exists!
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-form-group">
+                    <div class="uk-position-relative w-100">
+                        <input class="uk-input" type="text"  placeholder="Your Full Name" formControlName="fullName">
+                    </div>
+                    <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.fullName">
+                        <div class="error-message"
+                             *ngIf="formRegister?.get('fullName')?.hasError(validation.type) && (formRegister?.get('fullName')?.dirty || formRegister?.get('fullName')?.touched)">
+                            {{validation.message}}</div>
+                    </div>
+
+                </div>
+                <div class="uk-form-group">
+                    <div class="uk-position-relative w-100">
+                        <input class="uk-input" type="email" (ngModelChange)="funcCheckDuplicateEmail(formRegister.get('email')?.value)" placeholder="Your email " formControlName="email">
+                    </div>
+                    <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.email">
+                        <div class="error-message"
+                             *ngIf="formRegister?.get('email')?.hasError(validation.type) && (formRegister?.get('email')?.dirty || formRegister?.get('email')?.touched)">
+                            {{validation.message}}</div>
+                    </div>
+                    <div class="uk-position-relative w-100" *ngIf="checkDuplicateEmail">
+                        <div class="error-message">
+                            Email already exists!
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-form-group">
+                    <div class="uk-position-relative w-100">
+                        <input class="uk-input" type="text" (ngModelChange)="funcCheckDuplicatephoneNumber(formRegister.get('phoneNumber')?.value)" placeholder="Phone Number" formControlName="phoneNumber">
+                    </div>
+                    <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.phoneNumber">
+                        <div class="error-message"
+                             *ngIf="formRegister?.get('phoneNumber')?.hasError(validation.type) && (formRegister?.get('phoneNumber')?.dirty || formRegister?.get('phoneNumber')?.touched)">
+                            {{validation.message}}</div>
+                    </div>
+                    <div class="uk-position-relative w-100" *ngIf="checkConfirmPhoneNumber">
+                        <div class="error-message">
+                            PhoneNumber already exists!
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-form-group">
+                    <div class="uk-position-relative w-100">
+                        <input  [type]="changeType" class="uk-input"   placeholder="Your password" formControlName="password">
+                    </div>
+                    <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.password">
+                        <div class="error-message"
+                             *ngIf="formRegister?.get('password')?.hasError(validation.type) && (formRegister?.get('password')?.dirty || formRegister?.get('password')?.touched)">
+                            {{validation.message}}</div>
+                    </div>
+                </div>
+                <div class="uk-form-group">
+                    <div class="uk-position-relative w-100">
+                        <input  [type]="changeType" class="uk-input"  (ngModelChange)="funcCheckConfirmPassword()"  placeholder="Confirm password" formControlName="confirmPassword">
+                    </div>
+                    <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.confirmPassword">
+                        <div class="error-message"
+                             *ngIf="formRegister?.get('confirmPassword')?.hasError(validation.type) && (formRegister?.get('confirmPassword')?.dirty || formRegister?.get('confirmPassword')?.touched)">
+                            {{validation.message}}</div>
+                    </div>
+                    <div class="uk-position-relative w-100" *ngIf="checkConfirmPassword">
+                        <div class="error-message">
+                            Re-entered password does not match!
+                        </div>
+                    </div>
+                </div>
+                <p>Birthday </p>
+                <div class="uk-form-group">
+                    <div class="uk-position-relative w-100">
+                        <input class="uk-input" type="date" id="start" name="trip-start"
+                               value="yyyy-mm-dd"
+                               min="yyyy-01-01" [max]="today" formControlName="birthday">
+                    </div>
+                    <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.birthday">
+                        <div class="error-message"
+                             *ngIf="formRegister?.get('birthday')?.hasError(validation.type) && (formRegister?.get('birthday')?.dirty || formRegister?.get('birthday')?.touched)">
+                            {{validation.message}}</div>
+                    </div>
+                    <div class="uk-grid-margin uk-first-column">
+                        <h5 class="uk-text-bold mb-2"> Gender </h5>
+                        <fieldset formGroupName="genderObj">
+                            <select class="selectpicker"  formControlName="gender">
+                                <option value="Orther">Orther</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </fieldset>
+                    </div>
+                    <a (click)="funcShowPassword()" *ngIf="changeType=='text'" class="opts_account"> <i class="uil-eye-slash" ></i> <span> Hidden password</span> </a>
+                    <a (click)="funcShowPassword()" *ngIf="changeType=='password'" class="opts_account"> <i class="uil-eye"></i> <span>Show password</span> </a>
+                </div>
+                <button type="submit" [disabled]="!formRegister.valid" class="btn btn-primary btn-block mb-4">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

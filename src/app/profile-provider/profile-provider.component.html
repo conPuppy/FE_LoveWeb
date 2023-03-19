@@ -1,0 +1,620 @@
+<div id="wrapper">
+
+
+    <!-- header -->
+    <div id="main_header" class="header-transparent uk-sticky"
+         uk-sticky="top:10; cls-inactive :header-transparent">
+        <header>
+
+            <!-- Logo-->
+            <i class="header-traiger uil-bars" uk-toggle="target: #wrapper ; cls: mobile-active" (click)="goToTheHome()"></i>
+
+
+            <div class="h5 uk-hidden@m mr-3 mb-0"> Date Web</div>
+            <!-- form search-->
+            <div class="head_search uk-visible@m">
+                <form>
+                    <div class="head_search_cont">
+                        <input value="" type="text" class="form-control"
+                               placeholder="Search for Customers, Products, Files and more.." autocomplete="off">
+                        <i class="s_icon uil-search-alt"></i>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- user icons -->
+            <div class="head_user">
+
+
+                <!-- browse apps  -->
+                <a href="#" class="opts_icon uk-visible@s"> <i class="uil-shop"></i></a>
+                <a href="#" class="opts_icon uk-visible@s"> <i class="uil-shopping-basket"></i> <span>1</span></a>
+                <!-- cart apps dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications large">
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th scope="col"
+                                            style="vertical-align: text-top; text-align: left; font: 0.875rem / 1.5 Consolas, monaco, monospace;">
+                                            Provider
+                                        </th>
+                                        <th scope="col"
+                                            style="vertical-align: text-top; text-align: left; font: 0.875rem / 1.5 Consolas, monaco, monospace;">
+                                            Order Time (giờ)
+                                        </th>
+                                        <th scope="col"
+                                            style="vertical-align: text-top; text-align: left; font: 0.875rem / 1.5 Consolas, monaco, monospace;">
+                                            Total ($/giờ)
+                                        </th>
+                                        <th scope="col"
+                                            style="vertical-align: text-top; text-align: left; font: 0.875rem / 1.5 Consolas, monaco, monospace;"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr *ngFor="let o of orderLovers">
+                                        <td><span class="notification-avatar" style="width: 26px; height: 26px">
+                                            <img src="{{o?.provider?.account?.avatar}}" alt="">
+                                        </span></td>
+                                        <td style="text-align: center; font: 0.875rem / 1.5 Consolas, monaco, monospace;color: #666;">{{o?.provider?.account?.fullName}}</td>
+                                        <td style="text-align: center;font: 0.875rem / 1.5 Consolas, monaco, monospace;color: #666;">{{o.orderTime}}</td>
+                                        <td style="text-align: center;font: 0.875rem / 1.5 Consolas, monaco, monospace;color: #666;">{{o.total}} </td>
+                                        <td>
+                                            <button type="submit" class="btn btn-danger" data-bs-dismiss="modal"
+                                                    (click)="createOrderLover()">Order
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="dropdown-notifications-footer">
+                        <a href="#"> sell all <i class="icon-line-awesome-long-arrow-right"></i> </a>
+                    </div>
+                </div>
+
+
+                <!-- Message  notificiation dropdown -->
+                <a href="#" class="opts_icon"> <i class="uil-envelope-alt"></i> <span>4</span> </a>
+
+                <!-- Message  notificiation dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications large">
+
+                    <!-- notivication header -->
+                    <div class="dropdown-notifications-headline">
+                        <h4>Messages</h4>
+                        <a href="#">
+                            <i class="icon-feather-settings" uk-tooltip="title: Message settings ; pos: left"></i>
+                        </a>
+                    </div>
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read">
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-2.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Alia Joseph</strong>
+                                        <p>Okay thanks.. I will be waiting for your answer</p>
+                                        <span class="time-ago"> 2 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-3.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Stella Johnson</strong>
+                                        <p> Alia Joseph just joined Messenger! say Hi. </p>
+                                        <span class="time-ago"> 7 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-1.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Alex Dolgove</strong>
+                                        <p> Alex will explain you how to keep the structure ....</p>
+                                        <span class="time-ago"> 19 hours ago </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-avatar">
+                                            <img src="assets/images/team/team-4.jpg" alt="">
+                                        </span>
+                                    <div class="notification-text notification-msg-text">
+                                        <strong>Adrian Mohani</strong>
+                                        <p> Okay thanks.. I will be waiting for your answer </p>
+                                        <span class="time-ago"> Yesterday </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="dropdown-notifications-footer">
+                        <a href="#"> sell all <i class="icon-line-awesome-long-arrow-right"></i> </a>
+                    </div>
+
+
+                </div>
+
+
+                <!-- notificiation icon  -->
+                <a href="#" class="opts_icon"> <i class="uil-bell"></i> <span>3</span> </a>
+
+                <!-- notificiation dropdown -->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications">
+
+                    <!-- notivication header -->
+                    <div class="dropdown-notifications-headline">
+                        <h4>Notifications </h4>
+                        <a href="#">
+                            <i class="icon-feather-settings"
+                               uk-tooltip="title: Notifications settings ; pos: left"></i>
+                        </a>
+                    </div>
+
+                    <!-- notification contents -->
+                    <div class="dropdown-notifications-content" data-simplebar>
+
+                        <!-- notiviation list -->
+                        <ul>
+                            <li class="notifications-not-read">
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-danger">
+                                            <i class="uil-shopping-basket text-danger"></i></span>
+                                    <span class="notification-text"> New Order Recieved
+                                            <br> <span class="time-ago"> 9 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-success">
+                                            <i class="uil-user-plus text-success"></i></span>
+                                    <span class="notification-text"> New customer registered
+                                            <br> <span class="time-ago"> 19 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-danger">
+                                            <i class="icon-feather-database text-danger"></i></span>
+                                    <span class="notification-text">  Server Limit Reached!
+                                            <br> <span class="time-ago"> 12 hours ago </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-primary">
+                                            <i class="uil-apps text-primary"></i></span>
+                                    <span class="notification-text">
+                                            <strong>10+</strong>  Apps ready for update
+                                            <br> <span class="time-ago"> Yesterday </span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                        <span class="notification-icon bg-soft-success">
+                                            <i class="uil-user-plus text-success"></i></span>
+                                    <span class="notification-text"> New customer registered
+                                            <br> <span class="time-ago"> Yesterday </span>
+                                        </span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+                <!-- profile -image -->
+                <a class="opts_account"> <img src="{{account?.avatar}}" alt=""></a>
+
+                <!-- profile dropdown-->
+                <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small"
+                     class="dropdown-notifications small">
+
+                    <!-- User Name / Avatar -->
+                    <a href="#">
+
+                        <div class="dropdown-user-details">
+                            <div class="dropdown-user-avatar">
+                                <a class="opts_account">
+                                    <img src="{{account?.avatar}}" alt=""></a>
+                            </div>
+                            <div class="dropdown-user-name">
+                                {{account?.username}} <span> {{account?.wallet}} <i
+                                    class="icon-feather-dollar-sign"></i> </span>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <!-- User menu -->
+
+                    <ul class="dropdown-user-menu">
+                        <li><a class="btn-warning" *ngIf="statusProvider==3"> <i class="uil-user"></i> Wait admin
+                            accept!</a></li>
+                        <li><a class="btn-success" *ngIf="statusProvider==1"> <i class="uil-user"></i> Ready</a></li>
+                        <li><a class="btn-danger" *ngIf="statusProvider==2"> <i class="uil-user"></i> Busy</a></li>
+                        <li><a class="btn-success" (click)="createProvider()"
+                               *ngIf="statusProvider!=1&&statusProvider!=2&&statusProvider!=3"> <i class="uil-bolt"></i>
+                            Become Provider</a></li>
+                        <li><a (click)="goToProfile()"> <i class="uil-user"></i> My Profile </a></li>
+                        <li><a (click)="goToMyOrder()"> <i class="uil-invoice"></i> My Order </a></li>
+                        <li><a (click)="goToMyBill()"> <i class="uil-invoice"></i> My Bill </a></li>
+                        <li><a (click)="goToEditProfile()"> <i class="uil-edit"></i> Edit Profile </a></li>
+                        <li><a (click)="goToProviderSetting()"> <i class="uil-cog"></i> Provider Settings</a></li>
+                        <li class="menu-divider"></li>
+                        <li><a (click)="logout()"> <i class="icon-feather-log-out"></i> Sing Out</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+    </div>
+
+    <div class="box-gradient-home" style="height: 70px"></div>
+
+    <!-- content -->
+    <div class="page-content">
+        <div class="page-content-inner">
+
+
+            <div class="row">
+
+                <div class="col-lg-3 col-12">
+                    <!--                    -->
+                    <!--                    anh aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+                    <img src="{{provider?.account?.avatar}}" class="rounded" alt="Cinque Terre">
+                    <h2>Profile:</h2>
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="mt-1">
+                                <h6 class="mb-0">Joined:</h6>
+                                <p>{{provider?.account?.dateOfRegister}}</p>
+                            </div>
+                            <div class="mt-1">
+                                <h6 class="mb-0">Lives:</h6>
+                                <p>{{provider?.account?.city}}, {{provider?.account?.country}} </p>
+                            </div>
+                            <div class="mt-1">
+                                <h6 class="mb-0">Email:</h6>
+                                <p>{{provider?.account?.email}}</p>
+                            </div>
+                            <div class="mt-1">
+                                <h6 class="mb-0">Birthday:</h6>
+                                <p>{{provider?.account?.birthday}}</p>
+                            </div>
+                            <div class="mt-1">
+                                <h6 class="mb-0">Gender:</h6>
+                                <p>{{provider?.account?.gender}}</p>
+                            </div>
+                            <div class="mt-1">
+                                <h6 class="mb-0">Heigth and Weight:</h6>
+                                <p> {{provider?.account?.height}}cm, {{provider?.account?.weight}} kg</p>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-facebook btn-icon-label" style="color: #fff;
+    background-color: #3b5999;
+    border-color: #3b5999;
+    -webkit-box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .15);
+    box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .15);
+align-content: center">
+                                                                  <span class="btn-inner--icon">
+                                                                    <i class="icon-brand-facebook-f"></i>
+                                                                  </span>
+                                    <span class="btn-inner--text">Facebook</span>
+                                </button>
+                                <button type="button" class="btn btn-instagram btn-icon-label" style="color: #fff;
+    background-color: #e4405f;
+    border-color: #e4405f;
+    -webkit-box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .15);
+    box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .15);">
+                                                                  <span class="btn-inner--icon">
+                                                                    <i class="icon-brand-instagram"></i>
+                                                                  </span>
+                                    <span class="btn-inner--text">Instagram</span>
+                                </button>
+                                <!--                                <a class="btn btn-icon btn-facebook btn-circle" style="background-color: #3b5999;">-->
+                                <!--                                    <i class="icon-brand-facebook-f" style="color: #fff"></i></a>-->
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-lg-6 col-12">
+
+                    <div>
+                        <h3>{{provider?.account?.fullName}} ({{provider?.account?.username}})</h3>
+                    </div>
+                    <h3 *ngIf="provider?.statusProvider==1">
+                        <button type="button" class="btn btn-success">
+                            Active
+                        </button>
+                    </h3>
+                    <h3 *ngIf="provider?.statusProvider==2">
+                        <button type="button" class="btn btn-danger">
+                            Don't Active
+                        </button>
+                    </h3>
+
+                    <br>
+
+                    <div>
+                            <div >
+                                <p><i class="uil-eye"> </i> {{provider?.view}} views</p>
+                            </div>
+                        <hr>
+                        <div>
+                            <p class="h4">Service:</p>
+                            <div style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;box-sizing: border-box;    display: table;">
+                                <div class="p-2 border; btn btn-secondary" style="margin: 0 8px 6px 0;
+    border-radius: 10px;
+    float: left;
+    min-width: 100px;
+    text-align: center;
+"
+                                     *ngFor="let pp of allServicesOfProvider" >
+                                    {{pp?.provision?.name}}
+                                </div>
+
+                            </div>
+                            <hr>
+                        </div>
+                        <div>
+                            <p class="h4">Description:</p>
+                            <p style='word-wrap:break-word; '>{{provider?.account?.description}}</p>
+                        </div>
+                        <hr>
+                        <p class="h4">Evaluate</p>
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-12">
+
+
+                    <div class="card" style="    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    padding: 10px;
+    border: 1px solid #e2e6ea;">
+                        <h4><b>{{provider?.price}} $/h</b></h4>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <br>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#myModal"
+                                class="btn btn-danger" style="width: 100%;
+    height: 54px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    margin: 10px 0 0;
+    border: 0;
+    text-transform: uppercase; background-color: #f0564a; color: #fff;">Order
+                        </button>
+                        <button type="button" class="btn btn-outline-dark" style="width: 100%;
+    height: 54px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    margin: 10px 0 0;
+    border: 0;
+    text-transform: uppercase; color: #354052;
+    background-color: #fff;
+    border: 1px solid #e2e6ea;">Chat
+                        </button>
+                        <br>
+
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <h5>Latest Photos</h5>
+                        </div>
+                        <div class="card-body pb-0">
+                            <div class="row">
+                                <div class="col-md-4 col-6 animate-this mb-2 px-lg-2">
+                                    <img src="assets/images/team/team-1.jpg" class="img-fluid mb-1 rounded"
+                                         alt="avtar img holder">
+                                </div>
+                                <div class="col-md-4 col-6 animate-this mb-2 px-lg-2">
+                                    <img src="assets/images/team/team-2.jpg" class="img-fluid mb-1 rounded"
+                                         alt="avtar img holder">
+                                </div>
+                                <div class="col-md-4 col-6 animate-this mb-2 px-lg-2">
+                                    <img src="assets/images/team/team-6.jpg" class="img-fluid mb-1 rounded"
+                                         alt="avtar img holder">
+                                </div>
+                                <div class="col-md-4 col-6 animate-this mb-2 px-lg-2">
+                                    <img src="assets/images/team/team-7.jpg" class="img-fluid mb-1 rounded"
+                                         alt="avtar img holder">
+                                </div>
+                                <div class="col-md-4 col-6 animate-this mb-2 px-lg-2">
+                                    <img src="assets/images/team/team-1.jpg" class="img-fluid mb-1 rounded"
+                                         alt="avtar img holder">
+                                </div>
+                                <div class="col-md-4 col-6 animate-this mb-2 px-lg-2">
+                                    <img src="assets/images/team/team-2.jpg" class="img-fluid mb-1 rounded"
+                                         alt="avtar img holder">
+                                </div>
+                                <div class="col-md-4 col-6 animate-this mb-2 px-lg-2">
+                                    <img src="assets/images/team/team-6.jpg" class="img-fluid mb-1 rounded"
+                                         alt="avtar img holder">
+                                </div>
+                                <div class="col-md-4 col-6 animate-this mb-2 px-lg-2">
+                                    <img src="assets/images/team/team-7.jpg" class="img-fluid mb-1 rounded"
+                                         alt="avtar img holder">
+                                </div>
+                                <div class="col-md-4 col-6 animate-this mb-2 px-lg-2">
+                                    <img src="assets/images/team/team-7.jpg" class="img-fluid mb-1 rounded"
+                                         alt="avtar img holder">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="text-center"><a href="#"> Veiw more </a></div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+<form [formGroup]="formOrder" (submit)="createOrderLover()">
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" style="margin-left: 36%">Order Lover</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div>
+                        <div class="row">
+                            <div class="col">Homie:</div>
+                            <div class="col" style="margin-left: 20%">{{provider?.account?.fullName}}</div>
+                            <div class="col">
+
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col">Start day:</div>
+                            <div class="col">
+                                <input type="datetime-local" formcontrolname="startOrder" id="startOrder">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col">Order Time:</div>
+                            <div class="col">
+                                <fieldset formGroupName="selectTime">
+                                    <select class="form-select form-select-sm" (change)="caculatorTotal()"
+                                            formControlName="orderTime">
+                                        <option value="1">1 hour</option>
+                                        <option value="2">2 hours</option>
+                                        <option value="3">3 hours</option>
+                                        <option value="4">4 hours</option>
+                                        <option value="5">5 hours</option>
+                                        <option value="6">6 hours</option>
+                                        <option value="7">7 hours</option>
+                                        <option value="8">8 hours</option>
+                                        <option value="9">9 hours</option>
+                                        <option value="10">10 hours</option>
+                                        <option value="11">11 hours</option>
+                                        <option value="12">12 hours</option>
+                                        <option value="12">13 hours</option>
+                                        <option value="14">14 hours</option>
+                                        <option value="15">15 hours</option>
+                                        <option value="16">16 hours</option>
+                                        <option value="17">17 hours</option>
+                                        <option value="18">18 hours</option>
+                                        <option value="19">19 hours</option>
+                                        <option value="20">20 hours</option>
+                                        <option value="21">21 hours</option>
+                                        <option value="22">22 hours</option>
+                                        <option value="23">23 hours</option>
+                                        <option value="24">24 hours</option>
+
+                                    </select>
+                                </fieldset>
+                            </div>
+
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col">Total:</div>
+                            <div class="col">
+                                <input formControlName="total" readonly>
+                            </div>
+                            $
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Order</button>
+                    <button type="button" (click)="closeOrderLover()" class="btn btn-outline-light text-dark"
+                            data-bs-dismiss="modal">Close
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</form>
+

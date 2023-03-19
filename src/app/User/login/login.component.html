@@ -1,0 +1,39 @@
+<!-- Content
+================================================== -->
+<div uk-height-viewport="expand: true" class="uk-flex uk-flex-middle">
+    <div class="uk-width-1-3@m uk-width-1-2@s m-auto">
+        <div class="px-2 uk-animation-scale-up">
+            <div class="my-4 uk-text-center">
+                <h1 class="mb-2"> Login Form  </h1>
+                <p class="my-2">Don't have an a account. <a routerLink="/register"> Register</a> </p>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+                <div class="uk-form-group">
+                    <div class="uk-position-relative w-100">
+                        <input class="uk-input" type="text" placeholder="Your username" formControlName="username">
+                    </div>
+                    <p *ngIf="loginForm.get('username')?.errors?.['required'] && loginForm.get('username')?.['touched']" style="color: red">Vui lòng không để trống</p>
+                </div>
+
+                <div class="uk-form-group">
+                    <div class="uk-position-relative w-100">
+                        <input class="uk-input" type="password" placeholder="Your password" formControlName="password">
+                    </div>
+                    <p *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.['touched']" style="color: red">Vui lòng không để trống</p>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block mb-4"  style="background-color: #6e00ff;border-color: #6e00ff;">Login</button>
+
+                <a (click)="forgotPass()" class="text-center uk-display-block"> Forget your password</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- javaScripts
+================================================== -->

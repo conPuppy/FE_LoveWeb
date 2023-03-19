@@ -1,0 +1,6 @@
+#main_header.header-transparent {
+    background-color: transparent;
+    box-shadow: none !important;
+    border-color: transparent;
+    color: white;
+}
